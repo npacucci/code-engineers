@@ -34,9 +34,9 @@ const { frontmatter, url } = Astro.props.project;
 <style>
 	.card {
 		position: relative;
-		color: var(--t-bg);
-		background: var(--t-fg);
 		border: 1px solid #f0f0f0;
+		@apply text-white;
+		@apply bg-black;
 	}
 
 	.title {
@@ -50,10 +50,10 @@ const { frontmatter, url } = Astro.props.project;
 		margin: 0;
 		color: white;
 		flex-direction: column;
-		font-size: var(--f-u4);
 		font-weight: 900;
 		text-transform: uppercase;
 		letter-spacing: 0.0625em;
+		@apply text-3xl;
 	}
 
 	.titleCard {
@@ -68,10 +68,10 @@ const { frontmatter, url } = Astro.props.project;
 	}
 
 	.desc {
-		font-size: var(--f-u1);
 		line-height: 1.4;
 		margin-top: 0em;
 		margin-bottom: 1em;
+		@apply text-lg;
 	}
 
 	.link {
@@ -84,14 +84,14 @@ const { frontmatter, url } = Astro.props.project;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		color: var(--t-bg);
-		font-size: var(--f-u2);
 		font-weight: 700;
 		background: rgba(0, 0, 0, 0.25);
 		opacity: 0;
 		text-decoration: none;
 		text-transform: uppercase;
 		transition: opacity 150ms linear;
+		@apply text-white;
+		@apply text-sm;
 	}
 
 	.link:focus,
@@ -118,27 +118,27 @@ const { frontmatter, url } = Astro.props.project;
 	}
 
 	.tags {
-		font-size: var(--f-d2);
 		text-transform: uppercase;
+		@apply text-sm;
 	}
 
 	.tag {
 		display: inline-block;
-		color: var(--c-yellow);
 		text-transform: uppercase;
 		margin-left: 0.5em;
+		@apply text-yellow;
 	}
 
 	.tag:nth-of-type(1n) {
-		color: var(--c-green);
+		@apply text-green;
 	}
 	.tag:nth-of-type(2n) {
-		color: var(--c-orange);
+		@apply text-orange;
 	}
 	.tag:nth-of-type(3n) {
-		color: var(--c-blue);
+		@apply text-blue;
 	}
 	.tag:nth-of-type(4n) {
-		color: var(--c-pink);
+		@apply text-pink;
 	}
 </style>

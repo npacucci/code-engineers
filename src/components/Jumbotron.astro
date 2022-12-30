@@ -1,17 +1,19 @@
-<style>
-  /* scoped to the component */
-  .jumbotron {
-    position: relative;
-    overflow: hidden;
-  }
+---
+export interface Props {
+  title: string;
+}
 
-  @media (min-width: 750px) {
-    .jumbotron {
-      height: 45vw;
-    }
-  }
-</style>
-
-<header class="jumbotron b-border">
-  <slot></slot>
+const { title } = Astro.props;
+const labels: string[] = title.split(" ", 2);
+const isFullTitle: boolean = labels.length == 1;
+---
+<header class="w-full border-b-2 border-black flex text-[8vw]">
+  {labels.map((txt, i) => 
+    <div class:list={['h-full flex items-center bg-blue font-extrabold ',
+    {
+      'justify-center border-r-2 border-black pl-10 pr-4': i == 0 && !isFullTitle,
+      'w-full p-10' : i == 0 && isFullTitle,
+      'w-full justify-start pl-4 pr-10 bg-yellow': i == 1
+    }]}> {txt} </div>
+  )}
 </header>

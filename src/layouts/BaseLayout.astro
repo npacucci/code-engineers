@@ -1,7 +1,5 @@
 ---
 import BaseHtml, { Props as BaseHtmlProps } from "../components/BaseHtml.astro";
-import BaseMain from '../components/BaseMain.astro';
-import Jumbotron from '../components/Jumbotron.astro';
 
 export interface Props extends BaseHtmlProps { }
 
@@ -10,12 +8,7 @@ const { title, description } = Astro.props;
 ---
 
 <BaseHtml title={title} description={description}>
-  {Astro.slots.has('jumbotron') && (
-    <Jumbotron>
-      <slot name="jumbotron"></slot>
-    </Jumbotron>
-  )}
-  <BaseMain>
-    <slot />
-  </BaseMain>
+  <main class="container my-10">
+    <slot></slot>
+  </main>
 </BaseHtml>

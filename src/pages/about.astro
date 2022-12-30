@@ -1,10 +1,19 @@
 ---
+import Chapter from '../components/Chapter.astro';
+import GridSection from '../components/GridSection.astro';
+import MainChapter from '../components/MainChapter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Colors } from '../lib/enums/colors.enum';
 ---
 
 <BaseLayout
 	title="About"
 	description="About page">
-	<h1 class="text-5xl font-bold pb-12">About</h1>
-
+	<GridSection color={Colors.Black}>
+		<MainChapter title="Our Engineers" description="Developers, designers and all the other people part of the engineering team"></MainChapter>
+	</GridSection>
+	<GridSection color={{left: Colors.Green, right: Colors.Orange}}>
+		<Chapter slot="left" title="Left" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Chapter>
+		<Chapter slot="right" title="Right" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Chapter>
+	</GridSection>
 </BaseLayout>

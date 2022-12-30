@@ -6,10 +6,10 @@ module.exports = {
 			'black': '#000',
 			'white': '#fff',
 			'blue': '#90a8ed',
+			'yellow': '#ffc900',
 			'pink': '#ff90e8',
 			'orange': '#ffb7a3',
 			'green': '#23a094',
-			'yellow': '#ffc900',
 			'gray': '#90aab7'
 		},
 		fontFamily: {

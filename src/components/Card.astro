@@ -1,0 +1,11 @@
+---
+export interface Props {
+  imgUrl: string;
+}
+
+const { imgUrl } = Astro.props;
+
+---
+<div>
+  <div class="w-48 h-48 border-2 bg-cover bg-no-repeat rounded-lg" style={`background-image:url(${imgUrl})`}></div>
+</div>

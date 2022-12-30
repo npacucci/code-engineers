@@ -1,5 +1,6 @@
 ---
-import Chapter from '../components/Chapter.astro';
+import Card from '../components/Card.astro';
+// import Chapter from '../components/Chapter.astro';
 import GridSection from '../components/GridSection.astro';
 import MainChapter from '../components/MainChapter.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
@@ -12,8 +13,7 @@ import { Colors } from '../lib/enums/colors.enum';
 	<GridSection color={Colors.Black}>
 		<MainChapter title="Our Engineers" description="Developers, designers and all the other people part of the engineering team"></MainChapter>
 	</GridSection>
-	<GridSection color={{left: Colors.Green, right: Colors.Orange}}>
-		<Chapter slot="left" title="Left" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Chapter>
-		<Chapter slot="right" title="Right" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></Chapter>
+	<GridSection color={{left: Colors.Green}}>
+		<Card slot="left" imgUrl="/assets/nico.png" />
 	</GridSection>
 </BaseLayout>

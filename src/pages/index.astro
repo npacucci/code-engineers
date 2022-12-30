@@ -13,33 +13,7 @@ const featuredProject = projects[0]!;
 ---
 
 <BaseLayout 
-	title="Jeanine White: Personal Site"
-	description="Jeanine White: Developer, Speaker, and Writer...">
+	title="Code Engineers"
+	description="Code Engineers Blog">
 	
-	<Fragment slot="jumbotron">
-		<div class="bg-black text-white">
-			<h1> Code Engineers</h1>
-		</div>
-	</Fragment>
-
-	<div class="grid">
-		<div class="section">
-			<h3 class="sectionTitle">Selected Work</h3>
-			<PortfolioPreview project={featuredProject} />
-			<div class="buttonContainer">
-				<a href="/projects/" class="button">View All</a>
-			</div>
-		</div>
-		<div class="section">
-			<h3 class="sectionTitle">About me</h3>
-			<p class="bio">
-				<span>Hello!</span> I’m Jeanine, and this is my website. It was made using{' '}
-				<a href="https://github.com/withastro/astro" target="_blank" rel="nofollow"> Astro</a>,
-				a new way to build static sites. This is just an example template for you to modify.
-			</p>
-			<p>
-				<a href="/about">Read more</a>
-			</p>
-		</div>
-	</div>
 </BaseLayout>

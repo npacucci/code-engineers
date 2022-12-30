@@ -1,15 +1,26 @@
 ---
-import Jumbotron from './Jumbotron.astro';
+import LogoText from './LogoText.astro';
+
+const logoText: string = "Code Engineers";
 
 ---
 
-<nav class="border-y-2 border-black w-full">
-	<Jumbotron title="Code Engineers" />
-	<div class="flex py-5 px-10">
-		<a class="mr-12 " href="/">
-			<div class="monogram">Home</div>
-		</a>
-		<a class="mr-12" href="/projects/"> Projects </a>
-		<a class="mr-12" href="/about/"> About </a>
+<nav class="border-b-2 w-full">
+	<header class='hidden lg:flex border-b-2 text-[8vw] classList'>
+		<LogoText title={logoText}/>
+	</header>
+	<div class="flex lg:py-5 lg:px-10">
+		<LogoText classList="lg:hidden text-2xl" title={logoText} />
+		<div class="lg:hidden flex flex-col justify-center items-center px-5 py-5 border-l-2">
+			<div class="w-8 h-[2px] my-1 pr-0 pb-0 bg-black"></div>
+			<div class="w-8 h-[2px] my-1 pr-0 pb-0 bg-black"></div>
+		</div>
+		<div class="hidden lg:flex">
+			<a class="mr-12 " href="/">
+				<div>Home</div>
+			</a>
+			<a class="mr-12" href="/projects/"> Projects </a>
+			<a class="mr-12" href="/about/"> About </a>
+		</div>
 	</div>
 </nav>

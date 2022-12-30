@@ -21,7 +21,11 @@ module.exports = {
 		container: {
 			center: true,
 		},
-		extend: {},
+    extend: {
+      screens: {
+        'lg': '992px',
+      },
+    },
 	},
 	plugins: [],
 }

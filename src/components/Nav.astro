@@ -2,17 +2,18 @@
 import LogoText from './LogoText.astro';
 
 const logoText: string = "Code Engineers";
+const lineClass: string = "w-8 h-[2px] my-1 pr-0 pb-0 bg-black";
 ---
 
 <nav class="border-b-2 w-full">
-	<header class='hidden lg:flex border-b-2 text-[8vw] classList'>
+	<header class="hidden lg:flex border-b-2 text-[8vw]">
 		<LogoText title={logoText}/>
 	</header>
 	<div class="flex lg:py-5 lg:px-10">
 		<LogoText classList="lg:hidden text-2xl" title={logoText} />
 		<div class="lg:hidden flex flex-col justify-center items-center px-5 py-5 border-l-2">
-			<div class="w-8 h-[2px] my-1 pr-0 pb-0 bg-black"></div>
-			<div class="w-8 h-[2px] my-1 pr-0 pb-0 bg-black"></div>
+			<div class={lineClass}></div>
+			<div class={lineClass}></div>
 		</div>
 		<div class="hidden lg:flex">
 			<a class="mr-12 " href="/">

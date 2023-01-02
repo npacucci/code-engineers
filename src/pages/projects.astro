@@ -1,21 +1,40 @@
 ---
+import GridSection from '../components/GridSection.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import type { Project } from '../types';
+import { Colors } from '../lib/enums/colors.enum';
+import MainChapter from '../components/MainChapter.astro';
+import { MarkdownInstance } from 'astro';
 
-const projects = (await Astro.glob<Project>('./project/**/*.md'))
+const allProjects = (await Astro.glob<Project>('./project/**/*.md'))
 	.filter(({ frontmatter }) => !!frontmatter.publishDate)
 	.sort(
 		(a, b) =>
 			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
 	);
+
+const chunkArrayInGroups = (arr: any [], size: number): any[][] => {
+  let result = [];
+  for(let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i+size));
+  }
+  return result;
+}
+
+const projects: MarkdownInstance<Project>[][] = chunkArrayInGroups(allProjects, 2);
 ---
 
 <BaseLayout
 	title="Projects"
 	description="Projects page">
-	<h1 class="text-5xl font-bold pb-12">Projects</h1>
-	<div class="grid grid-cols-1 gap-16">
-		{projects.map((project) => <PortfolioPreview project={project} />)}
-	</div>
+	<GridSection color={Colors.Black}>
+		<MainChapter title="Projects" description="Explore all our projects, failures and achievements."></MainChapter>
+	</GridSection>
+	{projects.map((group: any[], i: number) =>
+		<GridSection color={i % 2 == 0 ? {left: Colors.Green, right: Colors.Orange} : {left: Colors.Orange, right: Colors.Green}}>
+			<PortfolioPreview slot="left" project={group[0]} />
+			{group[1] && <PortfolioPreview slot="right" project={group[1]} />}
+		</GridSection>
+	)}
 </BaseLayout>

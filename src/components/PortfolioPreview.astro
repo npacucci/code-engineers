@@ -9,17 +9,16 @@ interface Props {
 const { frontmatter, url } = Astro.props.project;
 ---
 
-<div class="card">
+<div class="relative border-2 bg-black text-white border-black">
 	<div class="titleCard" style={`background-image:url(${frontmatter.img})`}>
 		<h1 class="title">{frontmatter.title}</h1>
 	</div>
 	<div class="descCard">
 		<p class="desc">{frontmatter.description}</p>
-		<div class="tags">
-			Tagged:
+		<div class="flex">
 			{
 				frontmatter.tags.map((t) => (
-					<div class="tag" data-tag={t}>
+					<div class="mr-3 bg-yellow p-2 border-2 border-white text-black text-sm rounded-full" data-tag={t}>
 						{t}
 					</div>
 				))
@@ -32,13 +31,6 @@ const { frontmatter, url } = Astro.props.project;
 </div>
 
 <style>
-	.card {
-		position: relative;
-		border: 1px solid #f0f0f0;
-		@apply text-white;
-		@apply bg-black;
-	}
-
 	.title {
 		position: absolute;
 		top: 0;
@@ -115,30 +107,5 @@ const { frontmatter, url } = Astro.props.project;
 	.nav {
 		display: flex;
 		justify-content: flex-end;
-	}
-
-	.tags {
-		text-transform: uppercase;
-		@apply text-sm;
-	}
-
-	.tag {
-		display: inline-block;
-		text-transform: uppercase;
-		margin-left: 0.5em;
-		@apply text-yellow;
-	}
-
-	.tag:nth-of-type(1n) {
-		@apply text-green;
-	}
-	.tag:nth-of-type(2n) {
-		@apply text-orange;
-	}
-	.tag:nth-of-type(3n) {
-		@apply text-blue;
-	}
-	.tag:nth-of-type(4n) {
-		@apply text-pink;
 	}
 </style>

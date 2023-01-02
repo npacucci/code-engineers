@@ -32,7 +32,7 @@ const projects: MarkdownInstance<Project>[][] = chunkArrayInGroups(allProjects, 
 		<MainChapter title="Projects" description="Explore all our projects, failures and achievements."></MainChapter>
 	</GridSection>
 	{projects.map((group: any[], i: number) =>
-		<GridSection color={i % 2 == 0 ? {left: Colors.Green, right: Colors.Orange} : {left: Colors.Orange, right: Colors.Green}}>
+		<GridSection color={i % 2 == 0 ? {left: Colors.Gray, right: Colors.Blue} : {left: Colors.Blue, right: Colors.Gray}}>
 			<PortfolioPreview slot="left" project={group[0]} />
 			{group[1] && <PortfolioPreview slot="right" project={group[1]} />}
 		</GridSection>

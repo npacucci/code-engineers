@@ -10,10 +10,10 @@ const isFullTitle: boolean = labels.length == 1;
 ---
 <a class={`w-full flex ${classList}`} href="/">
   {labels.map((txt, i) => 
-    <div class:list={['h-full flex items-center bg-blue font-extrabold ',
+    <div class:list={['h-full flex items-center font-extrabold ',
     {
-      'justify-center border-r-2 border-black pl-[10%] pr-[1.5%]': i == 0 && !isFullTitle,
-      'w-full p-10' : i == 0 && isFullTitle,
+      'bg-blue justify-center border-r-2 border-black pl-[10%] pr-[1.5%]': i == 0 && !isFullTitle,
+      'bg-blue w-full p-10' : i == 0 && isFullTitle,
       'w-full justify-start pl-[1.5%] bg-yellow': i == 1
     }]}> {txt} </div>
   )}

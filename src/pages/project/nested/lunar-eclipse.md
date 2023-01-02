@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/project.astro
+layout: ../../../layouts/Project.astro
 title: Lunar Eclipse
 client: Self
 publishDate: 2020-03-04 00:00:00

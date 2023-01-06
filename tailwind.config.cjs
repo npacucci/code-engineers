@@ -13,10 +13,7 @@ module.exports = {
 			'gray': '#90aab7'
 		},
 		fontFamily: {
-			sans: ['Inter', 'system-ui', 'sans-serif'],
-			// serif: ['Merriweather', 'serif'],
-			// sans: ['Graphik', 'sans-serif'],
-			// serif: ['Merriweather', 'serif'],
+			sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
 		},
 		container: {
 			center: true,

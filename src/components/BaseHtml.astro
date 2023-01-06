@@ -1,21 +1,30 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+import '../styles/global.css';
 
 export interface Props {
   title: string;
   description?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+	title = 'Code Engineers',
+	description = 'Code Engineers Blog',
+} = Astro.props;
 ---
 <html lang="en">
 	<head>
-		<BaseHead
-			title={title}
-			description={description}
-		/>
+		<meta charset="UTF-8" />
+		<meta name="description" property="og:description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap" rel="stylesheet">
+		<style> @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap'); </style>
 	</head>
 	<body>
 		<Nav />

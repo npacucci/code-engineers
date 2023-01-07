@@ -1,1 +1,27 @@
-/* Global variables */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .menu-open {
+        @apply flex;
+        @apply flex-col;
+        @apply absolute;
+        @apply bg-black;
+        @apply text-white;
+        @apply w-full;
+        @apply h-full;
+        min-height: 100vh;
+        top: 62px;
+        z-index: 999;
+    }
+
+    .menu-open a {
+        @apply py-5;
+        @apply px-7;
+    }
+
+    .menu-open a:hover {
+        @apply text-yellow;
+    }
+}

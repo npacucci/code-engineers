@@ -11,11 +11,11 @@ const lineClass: string = "w-8 h-[2px] my-1 pr-0 pb-0 bg-black";
 	</header>
 	<div class="flex lg:py-5 lg:px-10">
 		<LogoText classList="lg:hidden text-2xl" title={logoText} />
-		<div class="lg:hidden flex flex-col justify-center items-center px-5 py-5 border-l-2">
-			<div class={lineClass}></div>
-			<div class={lineClass}></div>
+		<div id="nav-btn" class="lg:hidden cursor-pointer flex flex-col justify-center items-center px-5 py-5 border-l-2 hover:opacity-50">
+			<div class={lineClass} style="transform-style: preserve-3d;"></div>
+			<div class={lineClass} style="transform-style: preserve-3d;"></div>
 		</div>
-		<div class="hidden lg:flex">
+		<div id="nav" class="hidden lg:flex">
 			<a class="mr-12 " href="/">
 				<div>Home</div>
 			</a>
@@ -24,3 +24,30 @@ const lineClass: string = "w-8 h-[2px] my-1 pr-0 pb-0 bg-black";
 		</div>
 	</div>
 </nav>
+
+<script>
+	const nav = document.getElementById('nav') as HTMLElement;
+	const navBtn = document.getElementById('nav-btn');
+	const [l1, l2] = navBtn.children as HTMLCollectionOf<HTMLElement>;
+	let isMenuOpen: boolean = false;
+
+	if (nav && navBtn) {
+		navBtn.addEventListener('click', () => {
+			isMenuOpen = !isMenuOpen;
+
+			if (isMenuOpen) {
+				l1.style.transform = `translate3d(0px, 5px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg)`;				
+				l2.style.transform = `translate3d(0px, -5px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg)`;
+				nav.classList.add('menu-open');
+				nav.classList.remove('hidden');
+			}
+			else {
+				l1.style.transform = 'none';
+				l2.style.transform = 'none';
+				nav.classList.add('hidden');
+				nav.classList.remove('menu-open');
+			}
+		})
+	}
+
+</script>

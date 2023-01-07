@@ -13,7 +13,7 @@ module.exports = {
 			'gray': '#90aab7'
 		},
 		fontFamily: {
-			sans: ['"M PLUS Rounded 1c"', 'sans-serif'],
+			sans: ['"Space Grotesk"', 'sans-serif'],
 		},
 		container: {
 			center: true,

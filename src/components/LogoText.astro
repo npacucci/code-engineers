@@ -8,7 +8,7 @@ const { title, classList } = Astro.props;
 const labels: string[] = title.split(" ", 2);
 const isFullTitle: boolean = labels.length == 1;
 ---
-<a class={`w-full flex ${classList}`} href="/">
+<a class={`w-full flex tracking-[-1px] lg:tracking-[-5px] ${classList}`} href="/">
   {labels.map((txt, i) => 
     <div class:list={['h-full flex items-center font-extrabold ',
     {

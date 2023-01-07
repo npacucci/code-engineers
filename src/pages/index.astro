@@ -1,8 +1,10 @@
 ---
 // Component Imports
-import PortfolioPreview from '../components/PortfolioPreview.astro';
 import type { Project } from '../types';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import GridSection from '../components/GridSection.astro';
+import MainChapter from '../components/MainChapter.astro';
+import { Colors } from '../lib/enums/colors.enum';
 
 // Data Fetching: List all Markdown posts in the repo.
 const projects = await Astro.glob<Project>('./project/**/*.md');
@@ -15,5 +17,7 @@ const featuredProject = projects[0]!;
 <BaseLayout 
 	title="Code Engineers"
 	description="Code Engineers Blog">
-	
+	<GridSection color={Colors.Black}>
+		<MainChapter title={`We're shaping the future of digital journalism.`} description="Explore all our projects, failures and achievements."></MainChapter>
+	</GridSection>
 </BaseLayout>
